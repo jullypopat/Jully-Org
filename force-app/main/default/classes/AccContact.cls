@@ -17,6 +17,7 @@ public with sharing class AccContact {
    public PageReference savingCustomerRecord(){
    
         upsert accconts1;
+        System.debug(accconts1);
         PageReference nextpage= new PageReference('/'+accconts1);
         return nextpage;
     }
