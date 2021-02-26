@@ -1,0 +1,17 @@
+<template>
+    <div class="c-container">
+        <lightning-layout horizontal-align="spread" multiple-rows>
+            <lightning-layout-item padding="around-small" size="6">
+                <p>Select Source Location</p>
+                <c-city  onhandlechangeclick={picklistchange}></c-city >
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="6">
+                <p>Select Destination Location</p>
+                <c-city ></c-city >
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="6">
+                <c-map-creation value={location}></c-map-creation>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>  
+</template>

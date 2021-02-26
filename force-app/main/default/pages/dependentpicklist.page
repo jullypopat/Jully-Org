@@ -1,0 +1,17 @@
+<apex:page standardController="parent__c">
+<apex:form >
+<apex:pageBlock >
+<apex:pageblockSection title="dependent picklist">
+<apex:inputField value="{!parent__c.Name_start_with_A__c}"/>
+<apex:inputField value="{!parent__c.Name_start_with_s__c}"/>
+
+</apex:pageblockSection>
+
+
+</apex:pageBlock>
+
+
+</apex:form>
+  
+  
+</apex:page>

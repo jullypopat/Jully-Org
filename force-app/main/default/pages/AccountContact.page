@@ -1,0 +1,38 @@
+<apex:page controller="AccContact">
+  <apex:form >
+    <apex:actionStatus startText=" (incrementing...)"
+    stopText=" (done)" id="counterStatus"/>
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!acclst}" var="a">
+            <apex:column headerValue="Name">
+                <apex:commandLink action="{!selacc}" reRender="pgtbl" status="counterStatus">
+                    <apex:param name="conlst" value="{!a.id}"/>
+                    <apex:outputField value="{!a.name}"/>
+                </apex:commandLink>
+            </apex:column>  
+            <apex:column value="{!a.Email__c}" rendered="true"/>
+            <apex:column value="{!a.Address__c}" rendered="false"/>
+            
+            <!--accounts-->
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock id="pgtbl">
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Save" id="saveButton" action="{!savingCustomerRecord}"/>
+            <apex:commandButton value="Save" id="cancelButton" action="{!savingCustomerRecord}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockTable value="{!accconts1}" var="a">
+            <apex:column headerValue="AccountName" value="{!a.Name}"/>
+            <!--contacts-->
+                <apex:column headerValue="list contacts">
+                <apex:pageBlockTable value="{!a.contacts}" var="c">
+                    <apex:column headerValue="ContactName">
+                    <apex:outputField value="{!c.lastname}"> 
+                        <apex:inlineEditSupport showOnEdit="saveButton" hideOnEdit="cancelButton" event="ondblclick"/> </apex:outputField>
+                    </apex:column>
+                </apex:pageBlockTable><!-- End contact-->
+            </apex:column>
+        </apex:pageBlockTable><!--end account-->
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,58 @@
+<apex:page controller="ApexClass" showHeader="false" renderAs="PDF">
+    <center>
+        <apex:image id="download" url="{!URLFOR($Resource.Image)}" style="width:15%" />
+    </center>
+
+    <apex:form >
+
+        <body>
+            <table style="width:100%">
+                <tbody style="display:table-row-group;verticle-align:middle;">
+                    <tr style="display:table-row;">
+                        <th>
+                            Name:
+                        </th>
+                        <td>
+                            {!record.Name}
+                        </td>
+                        <th >
+                            Mobile:
+                        </th>
+                        <td>
+                            {!record.Phone}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th >
+                            Email:
+                        </th>
+                        <td>
+                            {!record.Email__c}
+                        </td>
+                        <th>
+                            Address:
+                        </th>
+                        <td>
+                            {!record.Address__c}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+                </body>
+    </apex:form>
+   
+    <apex:pageBlock >
+		<table>
+            
+        
+        <apex:pageBlockTable value="{!AccountList}" var="al">
+			<td><apex:column value="{!al.Id}"/></td>
+           	<apex:column value="{!al.Name}"/>
+            <apex:column value="{!al.Email__c}"/>
+                     
+        </apex:pageBlockTable>
+        </table>
+    </apex:pageBlock>
+
+</apex:page>

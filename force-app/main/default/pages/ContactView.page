@@ -1,0 +1,6 @@
+<apex:page standardController="Contact">
+    FirstName:{!Contact.Firstname}<br/>
+    lastName:{!Contact.Lastname}<br/>
+    Email{!Contact.Owner.Email}
+    
+</apex:page>

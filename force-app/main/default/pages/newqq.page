@@ -1,0 +1,25 @@
+<apex:page standardController="account" recordSetVar="accounts" renderAs="PDF">
+        <center ><apex:image id="download" url="{!URLFOR($Resource.Image)}" style="width:15%"/></center>
+		<apex:pageBlock >
+
+			<apex:form >
+                <apex:dataList value="{!accounts}" var="a">
+						<table>
+                            <tr>
+                            Name:<td><apex:outputField value="{!record.Name}"/></td>
+                            
+                            </tr>
+                    </table>
+    					<apex:pageblocksection title="Contacts for account {!a.name}" >
+
+        				<apex:repeat value="{!a.contacts}" var="c">
+
+           				<apex:inputField label="Contact name" value="{!c.name}"/><br/>
+
+       					 </apex:repeat></apex:pageblocksection>
+
+   				 </apex:dataList>   
+   		 </apex:form>
+</apex:pageBlock>
+
+</apex:page>

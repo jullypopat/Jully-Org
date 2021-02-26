@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="apexWireMethodWithParameters" icon-name="custom:custom64">
+        <lightning-input
+        type="search"
+        onchange={handle}
+        class="slds-m-botton-small"
+        label="Search"
+        value={searchKey}>
+    </lightning-input>
+    <template if:true={contacts.data}>
+        <template for:each={contacts.data} for:item="contact">
+            <p key={contact.Id}>{contact.Name}</p>
+        </template>
+    </template>
+    <template if:true={error}>    
+    </template>
+    </lightning-card>
+</template>

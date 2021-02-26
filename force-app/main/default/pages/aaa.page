@@ -1,0 +1,42 @@
+<apex:page controller="ApexClass" renderAs="PDF">
+    <center ><apex:image id="download" url="{!URLFOR($Resource.Image)}" style="width:15%"/></center>
+     <apex:form >
+    	
+    	<body>
+          <apex:pageBlock id="Account">
+            <table style="width:100%">
+
+      	        <tr style="display:table-row;">
+                    <th>Name:</th>
+                    	<td> <apex:outputField value="{!record.Name}"/></td>
+
+                    <th>Mobile:</th>
+                    	<td>{!record.Phone}</td>
+                    </tr>
+                    
+                    <tr>
+                    <th>Email:</th>
+                        <td>{!record.Email__c}</td>
+                    <th>Address:</th>
+                         <td>{!record.Address__c}</td>
+                    </tr>
+                    
+            </table>
+             <table border="1">
+                    <apex:repeat value="{!record.contacts}" var="c">
+                  
+                    <tr>
+                        <td>{!c.FirstName}</td>
+                    	<td>{!c.LastName}</td>
+                        <td>{!c.Email}</td>
+                        <td>{!c.Phone}</td>
+                    </tr>
+                    </apex:repeat>
+                
+                
+            </table>
+            </apex:pageBlock>
+        </body>
+    </apex:form>
+
+</apex:page>

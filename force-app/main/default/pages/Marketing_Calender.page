@@ -1,0 +1,5 @@
+<apex:page showHeader="false">
+    <apex:pageBlock >
+        <iframe src="https://calendar.google.com/calendar/embed?src=jullyp.goc%40gmail.com&ctz=Asia%2FKolkata" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </apex:pageBlock>
+</apex:page>
